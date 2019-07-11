@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import store from "./store/index";
 import {
   Button,
   Layout,
@@ -10,7 +10,8 @@ import {
   Radio,
   Menu,
   Form,
-  Input
+  Input,
+  Select
 } from "ant-design-vue";
 import Authorized from "./components/Authorized";
 import Auth from "./directives/auth.js";
@@ -23,6 +24,7 @@ Vue.use(Radio);
 Vue.use(Menu);
 Vue.use(Form);
 Vue.use(Input);
+Vue.use(Select);
 Vue.component("Authorized", Authorized);
 Vue.use(Auth);
 Vue.config.productionTip = false;
