@@ -11,7 +11,10 @@ import {
   Menu,
   Form,
   Input,
-  Select
+  Select,
+  LocaleProvider,
+  Dropdown,
+  DatePicker
 } from "ant-design-vue";
 import Authorized from "./components/Authorized";
 import Auth from "./directives/auth.js";
@@ -25,9 +28,18 @@ Vue.use(Menu);
 Vue.use(Form);
 Vue.use(Input);
 Vue.use(Select);
+Vue.use(LocaleProvider);
+Vue.use(Dropdown);
+Vue.use(DatePicker);
 Vue.component("Authorized", Authorized);
 Vue.use(Auth);
 Vue.config.productionTip = false;
+// 自定义图标
+const IconFont = Icon.createFromIconfontCN({
+  scriptUrl: "//at.alicdn.com/t/font_1294349_l7bbe19mmrl.js" // 在 iconfont.cn 上生成
+});
+
+Vue.component("IconFont", IconFont);
 
 new Vue({
   router,

@@ -1,10 +1,34 @@
 <template>
   <div class="header">
-    Header
+    <a-dropdown>
+      <a-icon type="global" />
+      <a-menu
+        slot="overlay"
+        @click="localeChange"
+        :selectedKeys="[$route.query.locale || 'zhCn']"
+      >
+        <a-menu-item key="zhCn">
+          中文
+        </a-menu-item>
+        <a-menu-item key="enUS">
+          English
+        </a-menu-item>
+      </a-menu>
+    </a-dropdown>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    localeChange({ key }) {
+      this.$router.push({ query: { ...this.$route.quer, locale: key } });
+    }
+  }
+};
+</script>
 <style scoped>
 .header {
   float: right;
+  margin-right: 30px;
 }
 </style>
